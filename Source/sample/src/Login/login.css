@@ -1,0 +1,68 @@
+.login_left_div {
+    background-image: url('https://i.pinimg.com/564x/2f/12/78/2f12787253a466f47ae56758d35ca001.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 50%;
+    height: 100vh;
+    float: left;
+}
+
+.login_Right_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.login_right_parent_div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    border: 2px solid black;
+    margin-top: 200px;
+    margin-left: 150px;
+    padding: 80px;
+    border-radius: 30px;
+    background: linear-gradient(white, black);
+}
+
+.login_div_style {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login_label_style {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.login_input_style {
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 20px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.login_btn_div {
+    display: flex;
+    justify-content: flex-end;
+
+}
+
+.login_btn_style {
+    margin-top: 30px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: blue;
+    color: white;
+}

@@ -1,0 +1,28 @@
+.slider-parent {
+    height: 100%;
+    position: relative;
+}
+
+.image-event-style {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.preview-btn-style {
+    border-radius: 5px;
+    background: linear-gradient(white, green);
+    padding: 10px;
+}
+
+.hole-container {
+    background-image: url('https://i.pinimg.com/236x/1d/b3/0e/1db30ee5dec21d582b646790bb518a30.jpg');
+}
+
+.previous-div {
+    margin-top: 451px;
+}
+
+.next-div {
+    margin-top: 451px;
+}

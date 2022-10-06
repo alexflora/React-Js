@@ -1,0 +1,151 @@
+.grid-container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin: auto;
+    max-width: 1000px;
+
+}
+
+.grid_item {
+    padding: 20PX;
+    background-color: lightgray;
+}
+
+.reg_div_style {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.reg_label {
+    width: 25%;
+    margin-top: 25px;
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 30px;
+    font-weight: bold;
+}
+
+.reg_input {
+    width: 75%;
+    margin-top: 25px;
+    padding: 15px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.head_style {
+    margin-left: 34px;
+    text-decoration: underline;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.reg_head_div_style {
+    margin-top: 69px;
+}
+
+.btn_div {
+    float: right;
+}
+
+.btn_style {
+    padding: 10px 25px;
+    border-radius: 10px;
+    background: linear-gradient(purple, pink);
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.ancher_style {
+    text-decoration: none;
+    color: black;
+}
+
+.nav_btn_style {
+    margin-right: 20px;
+    padding: 10px 20px;
+    background-color: red;
+    border-radius: 5px;
+    color: white;
+}
+
+
+
+.nav_div_style {
+    float: right;
+
+}
+
+.header_style {
+    margin-left: 650px;
+    color: blue;
+}
+
+.parent_container {
+
+    width: 100%;
+    /* background-image: conic-gradient(red, yellow, green); */
+    /* background-image: repeating-radial-gradient(red, yellow 10%, green 15%); */
+    background-image: url("https://1.bp.blogspot.com/-0wB60VpS9Ss/YHp0qmDm5xI/AAAAAAAAO4Q/Zv3ioM1BkjcFD8evrFXq73KsINlFgYnigCLcBGAsYHQ/s1920/wallpaper%2Bin%2BHD%2Bquality%2Bblack%2B%25281%2529.jpg");
+}
+
+input.reg_input[type="text"]:hover {
+    border: 2px solid red;
+}
+
+/*.parent_container{
+    column-count: 2;
+    
+}
+.div_style
+{
+   
+}
+.label_style{
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    
+}
+.input_style
+{
+    display: flex;
+    flex-direction: column;
+}*/
+
+
+/* =====form design */
+/*.total-form{
+    display: flex;
+    justify-content: space-evenly;
+    padding: 20px 50px;
+}
+.left{
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+.label{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    justify-content: space-between;
+}
+.total-form p, .inputbox{
+    height: 35px;
+}
+.total-form p{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.divs
+{
+    display: flex;
+    align-items: center;
+    gap:20px;
+
+}*/

@@ -1,0 +1,12 @@
+.nav-style-color {
+    background-color: black;
+}
+
+.btn {
+    margin-left: 20px;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+}

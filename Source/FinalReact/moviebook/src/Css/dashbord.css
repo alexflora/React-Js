@@ -1,0 +1,36 @@
+.dashbord-parent-container {
+    width: 600px;
+    height: 350px;
+    margin: 0px auto;
+    margin-top: 130px;
+}
+
+/* .hole-parent-container {
+    background-image: url('../Images/flower1.jpg');
+    background-size: cover;
+} */
+
+@media (min-width: 768px) {
+    .gradient-form {
+        height: 100vh !important;
+    }
+}
+
+@media (min-width: 769px) {
+    .gradient-custom-2 {
+        border-top-right-radius: .3rem;
+        border-bottom-right-radius: .3rem;
+    }
+}
+
+.image-card {
+    display: flex;
+    justify-content: space-between;
+
+}
+
+@media only screen and (max-width:500px) {
+    .image-card {
+        flex-direction: column;
+    }
+}
