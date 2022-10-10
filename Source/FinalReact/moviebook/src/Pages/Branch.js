@@ -1,18 +1,42 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Input from './CommonInput';
 import Selectinput from './Selectinput';
 import Button from './Buttoncomponent';
 import '../Css/register.css';
 import Navbar from "../Layouts/Navbar";
 import Footer from '../Layouts/Footer';
-const Booking = () => {
-    const [input, setinput] = useState({});
-    const handleonchange = (e) => {
-        setinput({ ...input, [e.target.name]: e.target.value })
+import { useDispatch, useSelector } from 'react-redux';
+import { getTheaterData, postBranchData } from '../Redux/Action';
+import { useParams, useNavigate } from 'react-router-dom';
+const Branch = () => {
+    const dispatch = useDispatch()
+    const { theater } = useSelector((state) => state.reducerResult)
+    useEffect(() => {
+        dispatch(getTheaterData());
+    }, [])
+    const [submitdata, setsubmitdata] = useState({});
+
+    const navigate = useNavigate()
+    const { id } = useParams()
+    const URL = id ? `api/branch/${id}/` : 'api/branch/'
+    const Method = id ? 'PUT' : 'POST'
+
+    const handleonchange = (e, name) => {
+        if (name) {
+            setsubmitdata({ ...submitdata, [name]: e })
+        }
+        else {
+            setsubmitdata({ ...submitdata, [e.target.name]: e.target.value })
+        }
+
     }
     const handleonclick = () => {
-        console.log(input)
+        console.log(submitdata)
+        const tempdata = { ...submitdata };
+        tempdata['theatername'] = tempdata?.theatername?.id
+        dispatch(postBranchData(tempdata, navigate, URL, Method));
     }
+
     return (
         <div>
             <Navbar />
@@ -23,13 +47,12 @@ const Booking = () => {
                             <div className="card" style={{ borderRadius: '15px' }}>
                                 <div className="card-body p-5">
                                     <h2 className="text-uppercase text-center mb-5">Branch Details</h2>
-                                    <Selectinput dclass='form-outline mb-4' lclass='form-label' iclass='react-select-style react-style1' lname='TheraterName' iname='theatername' />
-                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='text' lname='BranchName' iname='name' ifunction={handleonchange} />
-                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='number' lname='Phone' iname='phone' />
-                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='email' lname='Email' iname='email' />
-                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='text' lname='Address' iname='address' />
-                                    <Selectinput dclass='form-outline mb-4' lclass='form-label' iclass='react-select-style react-style1' lname='MovieName' iname='movieName' />
-                                    <Button dclass='d-flex justify-content-center' btype='button' bclass='btn btn-success btn-block btn-lg gradient-custom-4 text-body' bname='Submit' bfunction={handleonclick} />
+                                    <Selectinput dclass='form-outline mb-4' lclass='form-label' iclass='react-select-style react-style1' lname='TheraterName' iname='theatername' optionsval={theater} optionlabel={option => option && option.name} optionvalue={option => option && option.id} ifunction={(e) => handleonchange(e, 'theatername')} />
+                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='text' lname='BranchName' iname='name' icfunction={handleonchange} />
+                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='number' lname='Phone' iname='phone' icfunction={handleonchange} />
+                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='email' lname='Email' iname='email' icfunction={handleonchange} />
+                                    <Input dclass='form-outline mb-4' lclass='form-label' iclass='form-control form-control-lg' itype='text' lname='Address' iname='address' icfunction={handleonchange} />
+                                    <Button dclass='d-flex justify-content-center' btype='button' bclass='btn btn-success btn-block btn-lg gradient-custom-4 text-body' bname='Submit' bfunction={(e) => handleonclick(e)} />
                                 </div>
                             </div>
                         </div>
@@ -40,4 +63,4 @@ const Booking = () => {
         </div>
     );
 }
-export default Booking;
+export default Branch;
