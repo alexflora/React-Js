@@ -18,6 +18,7 @@ import EmployeeView from './Pages/EmployeeView';
 import MovieView from './Pages/MovieView';
 import BookingView from './Pages/BookingView';
 import AdminView from './Pages/AdminView';
+import Test from './Pages/Test';
 import { HashRouter, Routes, Route, Outlet, Navigate } from 'react-router-dom'
 import { useState, useLayoutEffect, Fragment } from 'react';
 import axios from 'axios';
@@ -55,6 +56,7 @@ function App() {
           <Route path='/registration' element={<Registration />} />
           <Route path='/' element={<Login maketrue={setauth} />} />
           <Route element={<PrivateRoute />}>
+            <Route path='/test' element={<Test />} />
             <Route path='/dashbord/:id' element={<Dashbord />} />
             <Route path='/customerview' element={<CustomerView />} />
             <Route path='/employeeview' element={<EmployeeView />} />

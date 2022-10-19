@@ -8,12 +8,11 @@ import { getDashbordimage } from '../Redux/Action';
 const Dashbord = () => {
     const dispatch = useDispatch()
     const { dashbordimage } = useSelector((state) => state.reducerResult)
-    console.log('------', dashbordimage)
-    const [image, setImage] = useState([dashbordimage?.map(res => res?.movieimage)])
-    console.log("image list", image)
+    // const [image, setImage] = useState([])
 
     useEffect(() => {
         dispatch(getDashbordimage())
+        // setImage([dashbordimage?.map(res => res?.movieimage)])
     }, [])
 
 

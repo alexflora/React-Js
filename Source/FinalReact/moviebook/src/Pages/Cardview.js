@@ -8,7 +8,7 @@ const Cardview = () => {
     return (
         <div>
             <Navbar />
-            <div style={{ marginTop: '20px' }}>
+            <div style={{ marginTop: '30px' }}>
                 <div class="row">
                     {
                         dashbordimage.map((res) => {
@@ -20,7 +20,7 @@ const Cardview = () => {
                                         </span>
                                         <div class="img-box">
                                             <img
-                                                style={{ width: "200px", height: "200px" }}
+                                                style={{ width: "200px", height: "200px", borderRadius: "10px" }}
 
                                                 src={res?.movieimage}
                                                 class="img-fluid"
@@ -33,7 +33,7 @@ const Cardview = () => {
                                                 <span>Rs.{res?.amount}</span>
                                             </p>
                                             <Link to='/booking'><button class="btn btn-primary" style={{ marginBottom: "20px" }}>
-                                                booking
+                                                book Here
                                             </button></Link>
                                         </div>
                                     </div>

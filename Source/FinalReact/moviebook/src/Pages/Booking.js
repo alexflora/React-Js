@@ -44,7 +44,7 @@ const Booking = () => {
             swal("Oops!", "Book the seats with in available seats!", "error");
         }
         else {
-            setamount({ 'finalamount': e.target.value * movieamount })
+            // setamount({ 'finalamount': e.target.value * movieamount })
             setseat({ ...seat, ['totalseat']: seats - e.target.value })
             setsubmitdata({ ...submitdata, 'noofseats': e.target.value, 'totalamount': e.target.value * movieamount })
         }
